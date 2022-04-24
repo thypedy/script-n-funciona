@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/stylefundo.css">
+    <title>MyGrid</title>
+</head>
+<body>
+    <a href="/admin">Voltar</a>
+    <h1>My Grid  - Gerenciamento de Conteúdo</h1>
+    <h3>My Grid - Adicionar</h3>
+    <form action="" method="post">
+        <label for="titulo">Título:</label>
+        <input type="text" name="titulo" id="" required><br>
+        <label for="texto">Texto:</label>
+        <textarea name="texto" id="" cols="30" rows="10"required></textarea><br>
+        <input type="submit" value="Gravar">
+    </form>
+
+    <div class="grupo">
+    <button onclick="funciona1()">night</button>
+        
+        <script>
+        function funciona1(){
+            var element = document.body;
+            element.classList.toggle("night");
+        }
+        </script>
+
+    <button onclick="funciona2()">space</button>
+        
+        <script>
+        function funciona2(){
+            var element = document.body;
+            element.classList.toggle("back2");
+        }
+        </script>
+
+    <button onclick="funciona3()">horizon</button>
+        
+        <script>
+        function funciona3(){
+            var element = document.body;
+            element.classList.toggle("back3");
+        }
+        </script>
+    </div>
+
+    <h3>My Grid - Listar</h3>
+    <table>
+        <tr>
+            <th>Títulos</th>
+            <th>Texto</th>
+        </tr>
+        <!--Inserir um loop para exibição da JSON mygrid-->
+        <% for (var n=0; n<dados.length; n++){%>
+        <tr>
+            <td><%=dados[n].titulo%></td>
+            <td><%=dados[n].texto%></td>
+        </tr>
+        <%}%>
+        <!--Fim do loop-->
+    </table>
+</body>
+</html>
